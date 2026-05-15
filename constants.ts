@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
       "Editor": "Patrick Kosteletzky\nJueli Kanuma\nLukas Schoenenberg",
       "Cast": "Nélida Martinez\nAnton Widauer\nPaul Trempnau"
     },
-    scorePdfUrl: 'https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/5_partitur/Phoenix%20Partitur%20Website%20Final.pdf'
+    scorePdfUrl: '/Phoenix Partitur Website Final.pdf'
   },
   {
     id: 'cowboys',
