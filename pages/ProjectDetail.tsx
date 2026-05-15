@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, Play, Pause, Maximize2, X, ChevronLeft, ChevronR
 import { pdfjs, Document, Page } from 'react-pdf';
 
 // Initialize PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -385,7 +385,7 @@ const ScoreModal: React.FC<{ url: string; onClose: () => void; title: string }> 
         {/* PDF Content Area */}
         <div ref={containerRef} className="flex-grow flex items-start justify-center bg-transparent overflow-auto md:p-8 select-none custom-scrollbar">
           <Document
-            file={`/api/proxy-pdf?url=${encodeURIComponent(url)}`}
+            file={url.startsWith('/') ? url : `/api/proxy-pdf?url=${encodeURIComponent(url)}`}
             onLoadSuccess={onDocumentLoadSuccess}
             loading={
               <div className="flex items-center justify-center text-white/50 animate-pulse flex-col gap-4 mt-20">
@@ -394,7 +394,10 @@ const ScoreModal: React.FC<{ url: string; onClose: () => void; title: string }> 
               </div>
             }
             error={
-              <div className="text-gray-500 uppercase tracking-widest text-xs mt-20">Failed to load Partitur.</div>
+              <div className="text-gray-500 uppercase tracking-widest text-xs mt-20 text-center">
+                Failed to load Partitur.<br/>
+                <span className="text-[10px] mt-2 block opacity-50">Local preview requires proxy. Deployment needs local PDF file.</span>
+              </div>
             }
             className="flex items-center justify-center py-4"
           >
@@ -460,7 +463,7 @@ const ScoreThumbnail: React.FC<{ url: string }> = ({ url }) => {
   return (
     <div ref={containerRef} className="w-full h-full flex items-center justify-center bg-white overflow-hidden pointer-events-none select-none">
       <Document
-        file={`/api/proxy-pdf?url=${encodeURIComponent(url)}`}
+        file={url.startsWith('/') ? url : `/api/proxy-pdf?url=${encodeURIComponent(url)}`}
         loading={
           <div className="flex items-center justify-center h-full">
             <div className="w-6 h-6 rounded-full border-2 border-black/5 border-t-black/40 animate-spin" />
@@ -582,7 +585,7 @@ const ProjectDetail: React.FC = () => {
                               {/* Real PDF Preview as Thumbnail */}
                               <div className="absolute inset-0 pointer-events-none select-none bg-white flex items-center justify-center overflow-hidden">
                                  <Document
-                                   file={`/api/proxy-pdf?url=${encodeURIComponent(project.scorePdfUrl)}`}
+                                   file={project.scorePdfUrl.startsWith('/') ? project.scorePdfUrl : `/api/proxy-pdf?url=${encodeURIComponent(project.scorePdfUrl)}`}
                                    className="w-full h-full flex items-center justify-center bg-white"
                                    loading={
                                      <div className="flex items-center justify-center h-full">

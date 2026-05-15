@@ -1,0 +1,3 @@
+Hier kannst du deine PDF-Dateien (z.B. Partituren) ablegen.
+Wenn du eine Datei namens 'score.pdf' hier hineinkopierst, ist sie in der App unter dem Pfad '/scores/score.pdf' erreichbar.
+Dies ist die sicherste Methode, um CORS-Probleme auf Plattformen wie Vercel zu vermeiden.
