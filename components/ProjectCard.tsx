@@ -24,7 +24,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <img 
           src={project.imageUrl || undefined} 
           alt={project.title} 
-          className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+          className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out chrome-image-fix"
         />
         
         {/* Overlay on hover */}

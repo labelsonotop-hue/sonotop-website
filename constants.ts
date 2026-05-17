@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
       "Editor": "Patrick Kosteletzky\nJueli Kanuma\nLukas Schoenenberg",
       "Cast": "Nélida Martinez\nAnton Widauer\nPaul Trempnau"
     },
-    scorePdfUrl: '/Phoenix Partitur Website Final.pdf'
+    scorePdfUrl: '/phoenix_dream_score.pdf'
   },
   {
     id: 'cowboys',
@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
     genre: 'Short Film',
     director: 'Dir. Sofie Hirschmüller',
     productionCompanies: ['FABW | DE'],
-    imageUrl: 'https://phoenix-media.b-cdn.net/Cowboy%20(2023)/4-poster/cowboy.jpg', // Updated Poster
+    imageUrl: 'https://phoenix-media.b-cdn.net/poster/cowboy.png', // Updated Poster
     stillImageUrl: 'https://phoenix-media.b-cdn.net/Cowboy%20(2023)/3-stills/FC387E11-EC72-42D1-A494-BE7320E0D3F1_1_201_a.jpeg', // Updated Filmstill
     synopsis: "In a bar, two young men meet, both lost between stagnation and the prospect of change. Louis escapes into grandiose fantasies, alcohol, and fragile role models, while Moritz searches for order, political conviction, and the possibility of a new beginning. Their conversations oscillate between intimacy, mockery, and an unspoken mutual dependency.\nWith laconic humor, COWBOY tells a story of masculinity, disorientation, and the desire to move forward together without knowing where to go.",
     fullCredits: {
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     genre: 'Documentary / Essay Film',
     director: 'Dir. Alva Berlich',
     productionCompanies: ['Burg Giebichenstein', 'Kunsthochschule Halle'],
-    imageUrl: 'https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/4-poster/dt_poster.jpg', // Updated Poster
+    imageUrl: 'https://phoenix-media.b-cdn.net/poster/dt.png', // Updated Poster
     stillImageUrl: 'https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/3_stills/header.jpeg', // Updated Filmstill to header.jpeg
     synopsis: "For a brief era, kites served as instruments of meteorology, carrying measuring devices into the upper layers of the atmosphere. Mythological dragons, too, are closely linked to wind and weather, sharing a profound ambiguity — they are difficult to grasp and to tame (to decode). Following a docu-fictional dragon trail through air and water, the film explores storytelling within the sociocultural weather kitchen.",
     fullCredits: {
@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
     genre: 'Short Film',
     director: 'Dir. Harald Furuholmen',
     productionCompanies: ['DFFB'],
-    imageUrl: 'https://phoenix-media.b-cdn.net/Hero%20(2017)/3-poster/hero_poster.jpg',
+    imageUrl: 'https://phoenix-media.b-cdn.net/poster/hero.png',
     stillImageUrl: 'https://phoenix-media.b-cdn.net/Fotos/B974A327-41F2-49C9-922F-230ABB456674_1_201_a.jpeg',
     synopsis: "A young boy estranged from his father and his new classmates steals his fathers gun to school. But when showing the others the gun a school shooting breaks out. With the gun in his hand he walks through the hallways of the school, hearing the massacre unfolding. But upon seeing two dead classmates he hides in a closet. Terrified, until finally his father finds him hours later.",
     fullCredits: {

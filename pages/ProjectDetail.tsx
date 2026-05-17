@@ -44,21 +44,21 @@ const SAMPLE_VIDEOS = {
   cowboy1: "https://phoenix-media.b-cdn.net/Cowboy%20(2023)/2-video/cowboy.mp4"
 };
 
-const PHOENIX_AUDIO_01 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/Traum%20(WS).wav";
-const PHOENIX_AUDIO_02 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/Felix%20f%C3%BChrt%20(WS).wav";
-const PHOENIX_AUDIO_03 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/Liebesszene%20(WS).wav";
-const PHOENIX_AUDIO_04 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/03_Auf_dem_Balkon_(Audio_WS).wav";
-const PHOENIX_AUDIO_05 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/06_Linus_(Audio_WS).wav";
-const PHOENIX_AUDIO_06 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/10_Phoenix_(Audio_WS).wav";
-const PHOENIX_AUDIO_07 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/08%20Ru%CC%88ckfall%20%26%20Verso%CC%88hnung%20(WS%2C%200-33%3A%20Fade-in).wav";
-const PHOENIX_AUDIO_08 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/02%20Zweifel%20(WS).wav";
-const PHOENIX_AUDIO_09 = "https://phoenix-media.b-cdn.net/Ph%C3%B6nix%20(2026)/1_audio/Finale%20(WS).wav";
+const PHOENIX_AUDIO_01 = "https://phoenix-media.b-cdn.net/audio-phx/dream.mp3";
+const PHOENIX_AUDIO_02 = "https://phoenix-media.b-cdn.net/audio-phx/felix.mp3";
+const PHOENIX_AUDIO_03 = "https://phoenix-media.b-cdn.net/audio-phx/love.mp3";
+const PHOENIX_AUDIO_04 = "https://phoenix-media.b-cdn.net/audio-phx/balcony.mp3";
+const PHOENIX_AUDIO_05 = "https://phoenix-media.b-cdn.net/audio-phx/linus.mp3";
+const PHOENIX_AUDIO_06 = "https://phoenix-media.b-cdn.net/audio-phx/phoenixcredits.mp3";
+const PHOENIX_AUDIO_07 = "https://phoenix-media.b-cdn.net/audio-phx/relapsecbr.mp3";
+const PHOENIX_AUDIO_08 = "https://phoenix-media.b-cdn.net/audio-phx/doubts.mp3";
+const PHOENIX_AUDIO_09 = "https://phoenix-media.b-cdn.net/audio-phx/finale.mp3";
 
-const DRACHEN_AUDIO_01 = "https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/1-audio/Gangstergitarre.wav";
-const DRACHEN_AUDIO_02 = "https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/1-audio/10%20Flockenlesen.wav";
-const DRACHEN_AUDIO_04 = "https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/1-audio/05%20Flockenlesen.wav";
-const DRACHEN_AUDIO_05 = "https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/1-audio/Ugly%20Wedding.wav";
-const DRACHEN_AUDIO_06 = "https://phoenix-media.b-cdn.net/Drachen-Takelage%20(2026)/1-audio/Postkarte%20%233%20(Zithernde%20Knie).wav";
+const DRACHEN_AUDIO_01 = "https://phoenix-media.b-cdn.net/audio-drachen/gangstergit.mp3";
+const DRACHEN_AUDIO_02 = "https://phoenix-media.b-cdn.net/audio-drachen/flockeneins.mp3";
+const DRACHEN_AUDIO_04 = "https://phoenix-media.b-cdn.net/audio-drachen/flockenzwei.mp3";
+const DRACHEN_AUDIO_05 = "https://phoenix-media.b-cdn.net/audio-drachen/ugly.mp3";
+const DRACHEN_AUDIO_06 = "https://phoenix-media.b-cdn.net/audio-drachen/postkartedrei.mp3";
 
 const COWBOY_AUDIO_01 = "https://phoenix-media.b-cdn.net/Cowboy%20(2023)/1-audio/Cowboy.wav";
 
@@ -558,7 +558,7 @@ const ProjectDetail: React.FC = () => {
 
         <div className="lg:col-span-8 flex flex-col">
           <div className="relative w-full aspect-video bg-black overflow-hidden mb-12 border border-white/5 shadow-2xl">
-            <img src={displayImage || undefined} alt={project.title} className="w-full h-full object-cover object-center" />
+            <img src={displayImage || undefined} alt={project.title} className="w-full h-full object-cover object-center chrome-image-fix" />
             <div className="absolute inset-0 opacity-[0.07] mix-blend-overlay pointer-events-none" style={{ backgroundImage: noiseOverlay }}></div>
             <div className="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-[#050a14] via-[#050a14]/40 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 z-10">
@@ -579,9 +579,9 @@ const ProjectDetail: React.FC = () => {
             <>
               <div className="relative mb-0">
                  {project.scorePdfUrl && (
-                   <div className="hidden lg:block absolute top-0 right-[calc(100%+3rem)] w-[calc((100%-3rem)/2)] h-full z-10">
-                      <div className="group relative w-full h-full cursor-pointer flex items-center justify-center" onClick={() => setIsScoreOpen(true)}>
-                          <div className="h-full aspect-[1/1.414] bg-white shadow-2xl flex flex-col opacity-95 group-hover:opacity-100 transition-all duration-500 relative overflow-hidden ring-1 ring-black/5 hover:scale-[1.02]">
+                   <div className="mb-12 lg:mb-0 lg:absolute lg:top-0 lg:right-[calc(100%+3rem)] lg:w-[calc((100%-3rem)/2)] lg:h-full z-10 flex justify-center lg:block">
+                      <div className="group relative h-full cursor-pointer flex items-center justify-center lg:w-full" onClick={() => setIsScoreOpen(true)}>
+                          <div className="w-[180px] md:w-[240px] lg:w-auto lg:h-full aspect-[1/1.414] bg-white shadow-2xl flex flex-col opacity-95 group-hover:opacity-100 transition-all duration-500 relative overflow-hidden ring-1 ring-black/5 hover:scale-[1.02]">
                               {/* Real PDF Preview as Thumbnail */}
                               <div className="absolute inset-0 pointer-events-none select-none bg-white flex items-center justify-center overflow-hidden">
                                  <Document
@@ -636,7 +636,7 @@ const ProjectDetail: React.FC = () => {
                     />
                     {!mainVideoPlaying && (
                       <div className="absolute inset-0 z-10 cursor-pointer group" onClick={handlePlayMain}>
-                        <img src={displayImage || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-[1.08] group-hover:blur-[0.3px]" alt="Thumbnail" />
+                        <img src={displayImage || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-[1.08] group-hover:blur-[0.3px] chrome-image-fix" alt="Thumbnail" />
                         <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500"></div>
                         <div className="absolute inset-0 flex items-center justify-center flex-col gap-4">
                           <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
@@ -700,7 +700,7 @@ const ProjectDetail: React.FC = () => {
                         />
                         {activePhoenixVideo !== index && (
                           <div className="absolute inset-0 z-10 cursor-pointer group" onClick={() => handlePlayPhoenix(index)}>
-                            <img src={thumbUrl || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-105 group-hover:blur-[0.3px]" alt="Thumbnail" />
+                            <img src={thumbUrl || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-105 group-hover:blur-[0.3px] chrome-image-fix" alt="Thumbnail" />
                             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500"></div>
                             <div className="absolute inset-0 flex items-center justify-center flex-col gap-4">
                               <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
@@ -765,7 +765,7 @@ const ProjectDetail: React.FC = () => {
                         />
                         {activeDrachenVideo !== index && (
                           <div className="absolute inset-0 z-10 cursor-pointer group" onClick={() => handlePlayDrachen(index)}>
-                              <img src={thumbUrl || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-105 group-hover:blur-[0.3px]" alt="Thumbnail" />
+                              <img src={thumbUrl || undefined} className="absolute inset-0 w-full h-full object-cover blur-[5px] scale-[1.05] transition-all duration-700 group-hover:scale-105 group-hover:blur-[0.3px] chrome-image-fix" alt="Thumbnail" />
                               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-colors duration-500"></div>
                               <div className="absolute inset-0 flex items-center justify-center flex-col gap-4">
                                 <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-500">
